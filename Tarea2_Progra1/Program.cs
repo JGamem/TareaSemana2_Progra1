@@ -58,6 +58,7 @@ do
                 float flot1 = 5.3f, flot2 = 2.3f, producto = (flot1 * flot2);
                 Console.WriteLine("El producto de los decimales {0} y {1} es: {2}", flot1, flot2, producto);
 
+                //Uso de try catch
                 try
                 {
                     Console.WriteLine("\nIngrese el primer número entero:");
@@ -77,7 +78,42 @@ do
                 break;
             case 3:
                 Console.Clear();
-                Console.WriteLine("Uso de char y string");
+                Console.WriteLine("Uso de char y string\n");
+
+                try
+                {
+                    Console.WriteLine("Ingrese una cadena de texto");
+                    string? cadenaTexto = Console.ReadLine();
+                    string cadenaReves = new string (cadenaTexto?.Reverse().ToArray());
+                    string encontrarPalabra = "programación";
+                    int contarVocal = 0;
+
+                    Console.WriteLine("La cadena '{0}' en mayúsculas: {1}", cadenaTexto, cadenaTexto?.ToUpper());
+                    Console.WriteLine("La cadena '{0}' en minúsculas: {1}", cadenaTexto, cadenaTexto?.ToLower());
+                    Console.WriteLine("La cadena '{0}' al revés: {1}", cadenaTexto, cadenaReves);
+                    if (cadenaTexto.Contains(encontrarPalabra))
+                    {
+                        Console.WriteLine("La palabra {0} se encuentra en la cadena de texto", encontrarPalabra);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No está la palabra '{0}' en la cadena papito :c", encontrarPalabra);
+                    }
+
+                    //Contar Vocal
+                    foreach (char vocal in cadenaTexto)
+                    {
+                        if ("aeiouAEIOU".Contains(vocal))
+                        {
+                            contarVocal++;
+                        }
+                    }
+                    Console.WriteLine("El número de vocales en el texto es: " + contarVocal);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 break;
             case 4:
                 Console.Clear();
