@@ -80,8 +80,6 @@ do
                 Console.Clear();
                 Console.WriteLine("Uso de char y string\n");
 
-                try
-                {
                     Console.WriteLine("Ingrese una cadena de texto");
                     string? cadenaTexto = Console.ReadLine();
                     string cadenaReves = new string (cadenaTexto?.Reverse().ToArray());
@@ -109,15 +107,46 @@ do
                         }
                     }
                     Console.WriteLine("El número de vocales en el texto es: " + contarVocal);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                    
                 break;
             case 4:
                 Console.Clear();
-                Console.WriteLine("Uso de tipos de datos numéricos");
+                Console.WriteLine("Uso de tipos de datos numéricos\n");
+                
+                Console.WriteLine("¡Vamos a calcular el área de un triángulo!");
+                Console.WriteLine("Ingresa el el valor de la base: ");
+                double baseTriangulo = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Ingresa el el valor de la altura: ");
+                double alturaTriangulo = Convert.ToDouble(Console.ReadLine());
+                double resultadoTriangulo = ((baseTriangulo*alturaTriangulo)/2);
+                Console.WriteLine("El área del triángulo es: {0}", resultadoTriangulo);
+
+                Console.WriteLine("\n¡Calcularemos el volumen de una esfera!");
+                Console.WriteLine("Ingresa el radio de tu esfera: ");
+                double radio = Convert.ToDouble(Console.ReadLine());
+                double volEsfera = (4.0 / 3.0) * Math.PI * Math.Pow(radio, 3);
+                Console.WriteLine("El volumen de tu esfera es: {0}", Math.Round(volEsfera,2));
+
+                Console.WriteLine("\nVamos a calcular la distancia entre 2 puntos x,y");
+                double x1 = 2.0;
+                double y1 = 3.0;
+                double x2 = 5.0;
+                double y2 = 7.0;
+                double distancia = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+                Console.WriteLine("La distancia entre los puntos es: {0}", distancia);
+
+                Console.WriteLine("\nConvertiremos de F° a C°");
+                Console.WriteLine("Ingresa los grados F°");
+                double F = Convert.ToDouble(Console.ReadLine());
+                double FtoC = ((5.0 / 9.0) * (F - 32.0));
+                Console.WriteLine("Los grados {0}F° en celsius son {1}C°", F,Math.Round(FtoC,2));
+
+                Console.WriteLine("Convertiremos de C° a F°");
+                Console.WriteLine("Ingresa los grados F°");
+                double C = Convert.ToDouble(Console.ReadLine());
+                double CtoF = (9.0 / 5.0) * C + 32.0;
+                Console.WriteLine("Los grados {0}F° en celsius son {1}C°",C, Math.Round(CtoF,2));
+
                 break;
             case 5:
                 Console.Clear();
